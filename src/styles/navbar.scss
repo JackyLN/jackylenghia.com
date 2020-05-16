@@ -1,0 +1,39 @@
+.main-nav {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.main-nav .text-center {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.main-nav .main-nav-navbar {
+  position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.main-nav .main-nav-navbar > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px; 
+  font-family: 'nixie_oneregular', 'Courier New', Courier, monospace; 
+  font-size: 18px;
+  color: grey;
+}
+
+.main-nav .main-nav-navbar > li > a:hover,
+.main-nav .main-nav-navbar > li > a:active {
+      //color: rgb(500,0,70);
+      color: rgb(0, 123, 255);
+      background-color: transparent;
+      font-weight: bold;
+
+}
+
+.nav-active {
+  color: rgb(0, 123, 255) !important;
+  background-color: transparent;
+  font-weight: bold;
+}

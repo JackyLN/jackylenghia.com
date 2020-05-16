@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import { useHistory } from 'react-router-dom';
 import {
   Button,
   Col,
@@ -7,11 +8,15 @@ import {
 } from 'reactstrap';
 import Footer from "../components/Footer";
 
-import "../styles/homepage.scss";
-
-import cat from "../assets/img/cat.jpg";
+import "../styles/main.scss";
 
 const HomePage = (props) => {
+
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/About");
+  }
 
   return (
     <Container fluid="true" className="full">
@@ -27,7 +32,7 @@ const HomePage = (props) => {
                 <br/>I'm Jacky Le, a Developer, <br/> Welcome to my website.
             </h4>
             <br/>
-            <Button color="secondary">Click here</Button>
+            <Button color="secondary" onClick={handleClick}>Click here</Button>
           </div>
         </Col>
       </Row>
@@ -37,4 +42,3 @@ const HomePage = (props) => {
 }
 
 export default HomePage;
-
