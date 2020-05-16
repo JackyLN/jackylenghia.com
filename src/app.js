@@ -5,7 +5,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
-// Containers
+
 const HomePage = React.lazy(() => import('./views/HomePage'));
 
 // // Pages
