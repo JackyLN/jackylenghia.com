@@ -15,7 +15,7 @@ const About = (props) => {
   return (
     <Container>
       <NavBar nav="About"/>
-      <Container fluid>
+      <Container>
         <div class="page-header">
             <h1> About HaeYeon </h1>
         </div>
@@ -75,7 +75,7 @@ const About = (props) => {
           </Col>
         </Row> 
       </Container>
-      <Footer />
+      <Footer footerClass="footer" />
     </Container>
   );
 }

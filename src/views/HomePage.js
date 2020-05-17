@@ -36,7 +36,7 @@ const HomePage = (props) => {
           </div>
         </Col>
       </Row>
-      <Footer />
+      <Footer footerClass="footer-home"/>
     </Container>
   );
 }
