@@ -1,14 +1,30 @@
 import React, { Component, useState } from "react";
 import {
   Button,
+  Card,
+  CardBody,
+  CardImg,
+  CardSubtitle,
+  CardText,
+  CardTitle,
   Col,
   Container,
-  Row
+  Row 
 } from 'reactstrap';
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 import "../styles/main.scss";
+
+import jackyimg from "../assets/img/jacky.jpg";
+
+import facebooklogo from "../assets/img/facebooklogo.png";
+import reactlogo from "../assets/img/reactlogo.png";
+import nodejslogo from "../assets/img/nodejslogo.png";
+import aspnetlogo from "../assets/img/aspnetlogo.png";
+import androidlogo from "../assets/img/androidlogo.png";
+import gitlogo from "../assets/img/gitlogo.png";
+
 
 const About = (props) => {
 
@@ -17,61 +33,90 @@ const About = (props) => {
       <NavBar nav="About"/>
       <Container>
         <div class="page-header">
-            <h1> About HaeYeon </h1>
+            <h1> About Me </h1>
         </div>
 
         <Row>
           <Col md="9">
             <br/>
-            <p>I am a self-motivated passionate Computer Programmer, yoga lover, continuous learner. My coding manifesto
+            <p>I am a self-motivated passionate Developer, cat lover, continuous learner. My coding manifesto
                 is to write code readable and organised, reduce code redundency and increase efficiency, test and
                 investigate every scenario possible.</p>
-            <p>Currently looking for an opportunity to be a part of a development team for my Fall(September - December)
-                2016 Co-op position and after graduation from January.</p>
+           
             <br />
-            <small><i>*for more information about co-op program and its benefit, please <a href="employer_guide.pdf" download="Employer's Guide">click here</a> to download 'Employer's Guide' document.</i></small>
+            <small><i>*for more information about co-op program and its benefit, please <a href="#">click here</a> to download 'Employer's Guide' document.</i></small>
           </Col>
           <Col md="3">
-            <img src="../images/lucy.png" alt="Lucy" />
+            <img src={jackyimg} alt="Jacky" className="avatar" />
           </Col>
         </Row>
         
         <Row>
           <Col lg="12">
-            <h2 class="page-header">Qualifications</h2>
+            <h2 class="page-header">Skils</h2>
           </Col>
           <Col lg="4" sm="6" className="row-text-center">
-            <img class="img-center" src="../images/responsive_web_development.png" height="200" alt="Responsive Web Design" />
-            <h3>Responsive Design<br/><small>CSS, Bootstrap</small></h3>
-            <p>Website that is responsive to the scale of any devices.</p>
+            <Card className="border-0">
+              <CardImg top className="card-img" src={facebooklogo} alt="Git" />
+              <CardBody>
+                <CardTitle className="card-title">Facebook Developer</CardTitle>
+                <CardSubtitle className="card-subtitle">Facebook API, Instagram API, Messenger API</CardSubtitle>
+                <CardText className="card-text">Develop and support for Facebook Bussiness using Facebook API</CardText>
+              </CardBody>
+            </Card>
           </Col>
           <Col lg="4" sm="6" className="row-text-center">
-            <img class="img-center" src="../images/cms.png" height="200" alt="Contents Management System" />
-            <h3>CMS<br/><small>PHP, MySQL</small></h3>
-            <p>Contents Management System that gives flexibility to manage website contents by yourself.</p>
+            <Card className="border-0">
+              <CardImg top className="card-img" src={reactlogo} alt="Git" />
+              <CardBody>
+                <CardTitle className="card-title">Website Design</CardTitle>
+                <CardSubtitle className="card-subtitle">React</CardSubtitle>
+                <CardText className="card-text">Website User Interface design using React Javascript library</CardText>
+              </CardBody>
+            </Card>
           </Col>
           <Col lg="4" sm="6" className="row-text-center">
-            <img class="img-center" src="../images/mean.png" height="200" alt="MEAN stack" />
-            <h3>MEAN stack<br/><small>MongoDB, Express.js, Angular.js, and Node.js</small></h3>
-            <p>Building a Dynamic Web Application</p>
+            <Card className="border-0">
+              <CardImg top className="card-img" src={nodejslogo} alt="Git" />
+              <CardBody>
+                <CardTitle className="card-title">Backend Stack</CardTitle>
+                <CardSubtitle className="card-subtitle">Node.js, Express.js, MongoDB</CardSubtitle>
+                <CardText className="card-text">Develop Backend website and API Services</CardText>
+              </CardBody>
+            </Card>
           </Col>
         </Row>
 
         <Row>
           <Col lg="4" sm="6" className="row-text-center">
-            <img class="img-center" src="../images/java-logo.png" height="200" alt="Java" />
-            <h3>OOP<br/><small>Java</small></h3>
-            <p>Object-Oriented Programming</p>
+            <Card className="border-0">
+              <CardImg top className="card-img" src={aspnetlogo} alt="Git" />
+              <CardBody>
+                <CardTitle className="card-title">ASP.NET</CardTitle>
+                <CardSubtitle className="card-subtitle">asp.net MVC, API services, Microsoft SQL</CardSubtitle>
+                <CardText className="card-text">Design and support enterprise system using Microsoft technology</CardText>
+              </CardBody>
+            </Card>
           </Col>
           <Col lg="4" sm="6" className="row-text-center">
-            <img class="img-center" src="../images/Octocat.png" height="200" alt="GitHub" />
-            <h3>Version Control<br/><small>GitHub</small> </h3>
-            <p>Continuous version control to manage projects timely manner.</p>
+            <Card className="border-0">
+              <CardImg top className="card-img" src={androidlogo} alt="Git" />
+              <CardBody>
+                <CardTitle className="card-title">Android</CardTitle>
+                <CardSubtitle className="card-subtitle">Android mobile development</CardSubtitle>
+                <CardText className="card-text">Build Android mobile application with latest UX</CardText>
+              </CardBody>
+            </Card>
           </Col>
           <Col lg="4" sm="6" className="row-text-center">
-            <img class="img-center" src="" height="200" alt="" />
-            <h3>Some skill<br/><small>related info</small></h3>
-            <p>related info</p>
+            <Card className="border-0">
+              <CardImg top className="card-img" src={gitlogo} alt="Git" />
+              <CardBody>
+                <CardTitle className="card-title">Version Control</CardTitle>
+                <CardSubtitle className="card-subtitle">GIthub, Bitbucket</CardSubtitle>
+                <CardText className="card-text">Manage and keep tracking projects and source code for software development</CardText>
+              </CardBody>
+            </Card>
           </Col>
         </Row> 
       </Container>
