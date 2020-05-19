@@ -32,7 +32,7 @@ const About = (props) => {
     <Container>
       <NavBar nav="About"/>
       <Container>
-        <div class="page-header">
+        <div className="page-header">
             <h1> About Me </h1>
         </div>
 
@@ -42,9 +42,7 @@ const About = (props) => {
             <p>I am a self-motivated passionate Developer, cat lover, continuous learner. My coding manifesto
                 is to write code readable and organised, reduce code redundency and increase efficiency, test and
                 investigate every scenario possible.</p>
-           
             <br />
-            <small><i>*for more information about co-op program and its benefit, please <a href="#">click here</a> to download 'Employer's Guide' document.</i></small>
           </Col>
           <Col md="3">
             <img src={jackyimg} alt="Jacky" className="avatar" />
@@ -53,7 +51,7 @@ const About = (props) => {
         
         <Row>
           <Col lg="12">
-            <h2 class="page-header">Skils</h2>
+            <h2 className="page-header">Skils</h2>
           </Col>
           <Col lg="4" sm="6" className="row-text-center">
             <Card className="border-0">
@@ -80,7 +78,7 @@ const About = (props) => {
               <CardImg top className="card-img" src={nodejslogo} alt="Git" />
               <CardBody>
                 <CardTitle className="card-title">Backend Stack</CardTitle>
-                <CardSubtitle className="card-subtitle">Node.js, Express.js, MongoDB</CardSubtitle>
+                <CardSubtitle className="card-subtitle">Node.js, Express.js, MongoDB, Nginx</CardSubtitle>
                 <CardText className="card-text">Develop Backend website and API Services</CardText>
               </CardBody>
             </Card>

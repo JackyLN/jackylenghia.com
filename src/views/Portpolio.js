@@ -13,7 +13,7 @@ const Portpolio = (props) => {
     <div class="container">
       
       <NavBar nav="Portpolio" />
-      <Footer />
+      <Footer footerClass="footer-home" />
     </div>
   );
 }
