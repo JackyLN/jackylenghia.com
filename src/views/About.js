@@ -51,7 +51,7 @@ const About = (props) => {
         
         <Row>
           <Col lg="12">
-            <h2 className="page-header">Skils</h2>
+            <h2 className="page-header">Skills</h2>
           </Col>
           <Col lg="4" sm="6" className="row-text-center">
             <Card className="border-0">
