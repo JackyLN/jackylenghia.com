@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect} from "react";
 import {
   Alert,
   Button,
@@ -11,7 +11,12 @@ import Footer from "../components/Footer";
 
 import "../styles/main.scss";
 
+
 const Contact = (props) => {
+  useEffect(() => {
+    FB.XFBML.parse();
+  });
+
   return(
     <Container>
       <NavBar nav="Contact" />
@@ -29,7 +34,7 @@ const Contact = (props) => {
             <Alert color="primary">Leave comment</Alert>
           </Col>
           <Col>
-            <div class="fb-comments" data-href="https://jackylenghia.com/#/Contact" data-numposts="5" data-width=""></div>
+            <div className="fb-comments" data-href="https://jackylenghia.com/#/Contact" data-numposts="5" data-width=""></div>
           </Col>
         </Row>  
         <Row>
