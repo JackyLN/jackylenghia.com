@@ -1,14 +1,27 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import App from './app'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-// ReactDOM.render(
-//   <Body />,
-//   document.getElementById("container")
-// );
+import App from './App.vue'
+import Foo from './views/Foo.vue'
+import Bar from './views/Bar.vue'
 
-ReactDOM.render(
-  <App />, document.getElementById("container")
-);
+Vue.use(VueRouter)
+
+const router = new VueRouter({
+  routes: [{
+    path: '/', name: 'foo', component: Foo
+  },
+  {
+    path: '/bar', name: 'bar', component: Bar
+  }]
+})
+
+new Vue({
+  el:'#app',
+  render:h=>h(App),
+  router
+})
+

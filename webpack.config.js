@@ -1,11 +1,7 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// plugins: [
-//   new MiniCssExtractPlugin({
-//     path: path.resolve(__dirname, 'dist'),
-//     filename: 'mystyles.css'
-//   }),
-// ]
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -15,57 +11,36 @@ module.exports = {
   },
   mode: 'development',
   //mode: 'production'
+  devServer: {
+    port: 9000
+  },
   watch: true,
   watchOptions: {
     aggregateTimeout: 300,
     poll: 1000
   },
   module: {
-    rules: [{
-        test: /\.(js|jsx)$/,
-        include: [
-          path.resolve(__dirname, 'src')
-        ],
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/react', '@babel/env'],
-            plugins: [
-              ["@babel/plugin-proposal-decorators", {
-                "legacy": true
-              }],
-              ["@babel/plugin-proposal-class-properties", {
-                "loose": true
-              }]
-            ]
-          }
-        }
-      },
+    rules: [
+      { test: /\.js$/, use: 'babel-loader' },
+      { test: /\.vue$/, use: 'vue-loader' },
+      { test: /\.css$/, use: ['vue-style-loader', 'css-loader']},
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.scss$/,
         use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
-      {
-        test: /\.(png|jpe?g|gif)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {},
-        }, ],
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: { modules: true }
+          },
+          'sass-loader'
+        ]
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+    new VueLoaderPlugin(),
+  ]
 };
-
